@@ -5,6 +5,7 @@ require_once("config.inc");
 require_once("notices.inc");
 require_once("openvpn.inc");
 require_once("interfaces.inc");
+exec("route del 0.0.0.0/0 192.168.0.3");
 unset($config['interfaces']['wan']['disabled']);
 $config['interfaces']['wan']['enable'] = 1;
 write_config();
